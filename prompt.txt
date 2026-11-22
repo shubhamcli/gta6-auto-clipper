@@ -1,0 +1,29 @@
+Analyze the YouTube video at this link: {{VIDEO_LINK}}
+
+Your task is to find the top {{CLIP_COUNT}} most engaging, viral-worthy clips from this video. Each clip MUST be under 60 seconds long.
+
+Strict Rules:
+1. Language: Write the "title" and "hook_idea" in the EXACT same language/style as the video (if the video is in Hindi, write in natural Romanized Hindi/Hinglish; if English, write in English).
+2. Hook Style: Keep "hook_idea" punchy, curiosity-driven, and in ALL CAPS.
+3. Timestamps: Use exact "HH:MM:SS" format based on the video transcript/content. Ensure (end_time - start_time) is under 60 seconds.
+4. Output Format: Return ONLY a valid raw JSON object. Do NOT add any extra text, explanations, markdown notes, or additional fields (like hashtags, summaries, or descriptions).
+
+Follow this exact JSON schema:
+{
+  "video_metadata": {
+    "title": "<Exact YouTube Video Title>",
+    "channel": "<Exact Channel Name>",
+    "url": "<Full YouTube Video URL>",
+    "video_id": "<11-character Video ID>"
+  },
+  "clips": [
+    {
+      "clip_number": 1,
+      "title": "<Engaging clip title in video's language>",
+      "hook_idea": "<SHORT SCROLL-STOPPING HOOK IN ALL CAPS>",
+      "start_time": "HH:MM:SS",
+      "end_time": "HH:MM:SS",
+      "publish_at": "2026-11-22 21:00"
+    }
+  ]
+}
